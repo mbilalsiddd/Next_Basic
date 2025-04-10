@@ -1,12 +1,12 @@
 "use client"
 import Link from "next/link";
 // import styles from "./page.module.css";
-import { useRouter } from "next/navigation";
-import User from "./server/user";
-import { hydrateRoot } from 'react-dom/client';
-import { useSelector, useDispatch } from "react-redux";
-import { increment, decrement } from "./redux/counterSlice";
-import { Router } from "next/router";
+// import { useRouter } from "next/navigation";
+// import User from "./server/user";
+// import { hydrateRoot } from 'react-dom/client';
+// import { useSelector, useDispatch } from "react-redux";
+// import { increment, decrement } from "./redux/counterSlice";
+// import { Router } from "next/router";
 import AddUser from "./adduser/page";
 import DisplayUser from "./displayuser/page";
 

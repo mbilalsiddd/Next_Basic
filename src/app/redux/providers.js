@@ -1,5 +1,6 @@
 "use client"
 
+import DisplayUser from "../displayuser/page"
 import { store } from "./store"
 import { Provider } from "react-redux"
 

@@ -1,7 +1,10 @@
 .inpa{
     height: 30px;
+    width: 13%;
     padding: 10px;
     border: 2px solid lightblue ;
+    background-color: lightblue;
+    color: black;
 }
 
 .btn{
@@ -14,9 +17,32 @@
 
 
 .inpd{
-    height: 30px;
     padding: 10px;
+    margin-top: 2%;
     border: 2px solid lightblue ;
-    height: 100px;
-    width: 150px;
+    height: 80%;
+    width: 23%;
+    background-color: lightblue;
+}
+
+.gap{
+    margin-top: 5%;
+    color:darkcyan;
+}
+
+
+.rbtn{
+    margin-left: 28%;
+    height: 40px;
+    width: 70px;
+    color: black;
+    background-color: lightblue;
+}
+
+.ebtn{
+    margin-left: 2%;
+    height: 40px;
+    width: 70px;
+    color: black;
+    background-color: lightblue;
 }
