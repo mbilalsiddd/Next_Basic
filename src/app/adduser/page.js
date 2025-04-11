@@ -1,6 +1,6 @@
 "user client"
 import { useState } from "react"
-import { addUser } from "../redux/counterSlice"
+import { addUser , deleteUser} from "../redux/counterSlice"
 import { useDispatch } from "react-redux"
 
 
@@ -27,6 +27,9 @@ const AddUser = () => {
             />
 
             <button className="btn" onClick={adduser}>AddUser</button>
+            <span>
+            <button className="btn" onClick={(item)=>dispatch(deleteUser(item.key))}>DeleteAllUser</button>
+            </span>
 
 
         </div>

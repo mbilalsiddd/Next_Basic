@@ -1,9 +1,16 @@
 "use client"
-import { createSlice, nanoid } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, nanoid } from "@reduxjs/toolkit";
 
 const initialState = {
+    userApiData:[],
     users:[],
 };
+
+export const fetchApiUsers = createAsyncThunk("fetchApiUsers" , async() => {
+    // console.log("action ==>");
+    const result = await fetch("https://fakestoreapi.com/products");
+    return result.json();
+})
 
 const counterSlice = createSlice({
     name: "addUser",
@@ -26,17 +33,33 @@ const counterSlice = createSlice({
            },
         editUser: (state , action) => {
             // console.log("edit user ==>" , action)
-            const edit = state.users[action.payload]
-            if(edit){
-                prompt(edit.name);
+            const edit = state.users.find((edit) => edit.id === action.payload);
+            if (edit) {
+              const newName = prompt("Edit Name:", edit.name);
+              if (newName) {
+                edit.name = newName;
             }
-            
-        }    
+          }
+        }, 
+        deleteUser: (state , action) => {
+            const del = state.users.filter((item) => {
+                return item.key!==action.payload
+            })
+            state.users=del;
+        }  
     },
+    extraReducers:(builder) => {
+        builder.addCase(fetchApiUsers.fulfilled, (state , action) => {
+            console.log(" reducer ==> " , action)
+
+            state.isloading=false;
+            state.userApiData = action.payload
+        })
+    }
 });
 
 
-export const {addUser ,  removeUser , editUser} = counterSlice.actions
+export const {addUser ,  removeUser , editUser , deleteUser } = counterSlice.actions
 export default counterSlice.reducer
 
 

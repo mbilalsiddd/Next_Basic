@@ -20,6 +20,7 @@ const DisplayUser = () => {
                             <span>
                                 <button className="rbtn" onClick={() => dispatch(removeUser(item.id))}>remove</button>
                                 <button className="ebtn"  onClick={() => dispatch(editUser(item.id))} >edit</button>
+                                {/* <button className="ebtn"  onClick={() => dispatch(deleteUser(item.key))} >DeleteAll</button> */}
                             </span>
 
                         </div>

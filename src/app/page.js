@@ -9,6 +9,9 @@ import Link from "next/link";
 // import { Router } from "next/router";
 import AddUser from "./adduser/page";
 import DisplayUser from "./displayuser/page";
+import ApiUser from "./apiuser/page";
+
+
 
 
 export default function Page() {
@@ -50,8 +53,9 @@ export default function Page() {
       <button onClick={() => dispatch(decrement())}>Decrement</button>
      */}
 
-     <AddUser/>
-     <DisplayUser/>
+     {/* <AddUser/>
+     <DisplayUser/> */}
+     <ApiUser/>
 
     </div>
   );
