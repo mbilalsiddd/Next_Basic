@@ -53,8 +53,8 @@ export default function Page() {
       <button onClick={() => dispatch(decrement())}>Decrement</button>
      */}
 
-     {/* <AddUser/>
-     <DisplayUser/> */}
+     <AddUser/>
+     <DisplayUser/>
      <ApiUser/>
 
     </div>
