@@ -47,18 +47,18 @@ export default function Page() {
       <button onClick={() => { navigate("/about/studentinfo") }}>go to studentinfo page</button>
       <br />
       <button onClick={() => { navigate("/studentlist") }}>go to studentlist page</button>
-      <User/>
+      <User/> */}
       
       
-      <h1>Count: {count}</h1>
+      {/* <h1>Count: {count}</h1>
       <button onClick={() => dispatch(increment())}>Increment</button>
       <button onClick={() => dispatch(decrement())}>Decrement</button> */}
     
 
-     <AddUser/>
-     <DisplayUser/>
+     {/* <AddUser/>
+     <DisplayUser/> */}
      <ApiUser/>
-     <SplitApi/>
+     {/* <SplitApi/> */}
 
     </div>
   );

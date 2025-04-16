@@ -1,3 +1,7 @@
+h1{
+    text-align: center;
+}
+
 .inpa{
     height: 30px;
     width: 18%;
@@ -5,6 +9,8 @@
     border: 2px solid lightblue ;
     background-color: lightblue;
     color: black;
+    margin-left: 32%;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .btn{
@@ -23,6 +29,7 @@
     height: 80%;
     width: 38%;
     background-color: lightblue;
+    margin-left: 32%;
 }
 
 .gap{
@@ -32,7 +39,7 @@
 
 
 .rbtn{
-    margin-left: 28%;
+    margin-left: 40%;
     height: 40px;
     width: 70px;
     color: black;

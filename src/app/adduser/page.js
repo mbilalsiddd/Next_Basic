@@ -1,23 +1,26 @@
 "user client"
 import { useState } from "react"
-import { addUser , deleteUser} from "../redux/counterSlice"
+// import { addUser , deleteUser} from "../redux/counterSlice"
+import { addProduct , deleteAllProduct} from "../redux/slices/productSlice"
+
 import { useDispatch } from "react-redux"
 
 
 const AddUser = () => {
     const [inputValue, setInputValue] = useState('')
+     const dispatch = useDispatch()
 
-    const dispatch = useDispatch()
 
-
-    const adduser = () => {
-        dispatch(addUser(inputValue));
+    const Addproduct = () => {
+        // dispatch(addUser(inputValue));
+        dispatch(addProduct(inputValue));
         // console.log("inputValue" , inputValue)
     }
 
     return (
         <div>
-           <h3 >Todo App</h3>
+           <h1 >Todo App</h1>
+           <div className="main">
             <input
                 className="inpa"
                 value={inputValue}
@@ -26,10 +29,13 @@ const AddUser = () => {
                 onChange={(e) => setInputValue(e.target.value)}
             />
             
-            <button className="btn" onClick={adduser}>AddUser</button>
+            {/* <button className="btn" onClick={adduser}>AddUser</button> */}
+            <button className="btn" onClick={Addproduct}>AddUser</button>
             <span>
-            <button className="btn" onClick={(item)=>dispatch(deleteUser(item.key))}>DeleteAllUser</button>
+            {/* <button className="btn" onClick={(item)=>dispatch(deleteUser(item.key))}>DeleteAllUser</button> */}
+            <button className="btn" onClick={(item)=>dispatch(deleteAllProduct(item.key))}>DeleteAllUser</button>
             </span>
+          </div>
 
 
         </div>

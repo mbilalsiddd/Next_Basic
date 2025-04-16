@@ -1,13 +1,13 @@
 "use client"
 import { useDispatch, useSelector } from "react-redux";
-import { fetchApiUsers } from "../redux/counterSlice";
+import { fetchApiUsers } from "../redux/slices/productSlice";
 
 
 
 const ApiUser = () => {
     const dispatch = useDispatch()
-    const apiUserData = useSelector((state) => state.counter.userApiData)
-    console.log("apidata", apiUserData);
+    const productData = useSelector((state) => state.product.products)
+    console.log("productData", productData);
 
 
     return (
@@ -15,7 +15,7 @@ const ApiUser = () => {
             <h3>Api handling</h3>
             <button onClick={() => dispatch(fetchApiUsers())}>Api check</button>
             {
-                apiUserData && apiUserData.map((item) => (
+                productData && productData.map((item) => (
                     <h4 key={item.id}>{item.title}</h4>
                ) 
             )}
@@ -24,3 +24,5 @@ const ApiUser = () => {
 }
 
 export default ApiUser;
+
+

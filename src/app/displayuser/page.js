@@ -1,12 +1,13 @@
 "use client"
 import { useDispatch, useSelector } from "react-redux";
-import { editUser, removeUser } from "../redux/counterSlice";
+import { editProduct, removeProduct } from "../redux/slices/productSlice";
 
 
 const DisplayUser = () => {
     // const userData = useSelector((data)=> dispatch().data.users)
     const dispatch = useDispatch();
-    const state = useSelector((state) => state.reducer.users);
+    // const state = useSelector((state) => state.reducer.users);
+    const state = useSelector((state) => state.product.products);
     console.log("userData", state);
 
     return (
@@ -18,8 +19,8 @@ const DisplayUser = () => {
                     state.map((item, index) => (
                         <div className="gap" key={index}>{item.name}
                             <span>
-                                <button className="rbtn" onClick={() => dispatch(removeUser(item.id))}>remove</button>
-                                <button className="ebtn"  onClick={() => dispatch(editUser(item.id))} >edit</button>
+                                <button className="rbtn" onClick={() => dispatch(removeProduct(item.id))}>remove</button>
+                                <button className="ebtn"  onClick={() => dispatch(editProduct(item.id))} >edit</button>
                                 {/* <button className="ebtn"  onClick={() => dispatch(deleteUser(item.key))} >DeleteAll</button> */}
                             </span>
 
@@ -33,6 +34,12 @@ const DisplayUser = () => {
 }
 
 export default DisplayUser;
+
+
+
+
+
+
 
 
 

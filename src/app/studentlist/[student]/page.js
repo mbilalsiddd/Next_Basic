@@ -1,5 +1,6 @@
 "use client"
 
+
 const Student = ({params}) => {
     console.log(params);
     return (
