@@ -1,5 +1,5 @@
 "use client"
-import Link from "next/link";
+// import Link from "next/link";
 // import styles from "./page.module.css";
 // import { useRouter } from "next/navigation";
 // import User from "./server/user";
@@ -10,6 +10,8 @@ import Link from "next/link";
 import AddUser from "./adduser/page";
 import DisplayUser from "./displayuser/page";
 import ApiUser from "./apiuser/page";
+import SplitApi from "./splitapi/page";
+
 
 
 
@@ -50,12 +52,13 @@ export default function Page() {
       
       <h1>Count: {count}</h1>
       <button onClick={() => dispatch(increment())}>Increment</button>
-      <button onClick={() => dispatch(decrement())}>Decrement</button>
-     */}
+      <button onClick={() => dispatch(decrement())}>Decrement</button> */}
+    
 
-     {/* <AddUser/>
-     <DisplayUser/> */}
+     <AddUser/>
+     <DisplayUser/>
      <ApiUser/>
+     <SplitApi/>
 
     </div>
   );

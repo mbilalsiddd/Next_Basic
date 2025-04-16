@@ -25,7 +25,7 @@ const AddUser = () => {
                 placeholder="enter the value"
                 onChange={(e) => setInputValue(e.target.value)}
             />
-
+            
             <button className="btn" onClick={adduser}>AddUser</button>
             <span>
             <button className="btn" onClick={(item)=>dispatch(deleteUser(item.key))}>DeleteAllUser</button>

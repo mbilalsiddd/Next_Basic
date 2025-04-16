@@ -1,13 +1,18 @@
 import { configureStore } from '@reduxjs/toolkit'
-import reducer from './counterSlice'
+import CounterReducer, { emptySplitApi } from './counterSlice'
 // import counterReducer from "./counterSlice";
+
+
 
 
 export const store = configureStore({
   reducer: {
-    // counter: counterReducer,
-    reducer   
+    reducer:CounterReducer,
+    counter:CounterReducer,  
+    [emptySplitApi.reducerPath]: emptySplitApi.reducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(emptySplitApi.middleware),
 })
 
 

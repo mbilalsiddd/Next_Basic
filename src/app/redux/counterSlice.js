@@ -1,9 +1,13 @@
 "use client"
 import { createAsyncThunk, createSlice, nanoid } from "@reduxjs/toolkit";
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+
+
 
 const initialState = {
     userApiData:[],
     users:[],
+    products:[],
 };
 
 export const fetchApiUsers = createAsyncThunk("fetchApiUsers" , async() => {
@@ -11,6 +15,13 @@ export const fetchApiUsers = createAsyncThunk("fetchApiUsers" , async() => {
     const result = await fetch("https://fakestoreapi.com/products");
     return result.json();
 })
+
+export const emptySplitApi = createApi({
+    reducerPath: 'emptySplitApi',
+    baseQuery: fetchBaseQuery({ baseUrl: 'https://fakestoreapi.com/' }),
+    endpoints: () => ({}),
+})
+
 
 const counterSlice = createSlice({
     name: "addUser",

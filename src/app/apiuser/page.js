@@ -6,7 +6,7 @@ import { fetchApiUsers } from "../redux/counterSlice";
 
 const ApiUser = () => {
     const dispatch = useDispatch()
-    const apiUserData = useSelector((state) => state.userDataApi)
+    const apiUserData = useSelector((state) => state.counter.userApiData)
     console.log("apidata", apiUserData);
 
 
@@ -14,16 +14,13 @@ const ApiUser = () => {
         <div>   
             <h3>Api handling</h3>
             <button onClick={() => dispatch(fetchApiUsers())}>Api check</button>
-            {/* {
-                apiUserData.length && apiUserData.map((item, index) => (
-                    <h4 key={index}>{item.category}</h4>
-                ))
-            } */}
+            {
+                apiUserData && apiUserData.map((item) => (
+                    <h4 key={item.id}>{item.title}</h4>
+               ) 
+            )}
         </div>
     )
 }
 
 export default ApiUser;
-
-
-
