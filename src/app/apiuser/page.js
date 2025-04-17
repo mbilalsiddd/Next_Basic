@@ -12,13 +12,13 @@ const ApiUser = () => {
 
     return (
         <div>   
-            <h3>Api handling</h3>
-            <button onClick={() => dispatch(fetchApiUsers())}>Api check</button>
+            {/* <h3>Api handling</h3> */}
+            {/* <button onClick={() => dispatch(fetchApiUsers())}>Api check</button>
             {
                 productData && productData.map((item) => (
                     <h4 key={item.id}>{item.title}</h4>
                ) 
-            )}
+            )} */}
         </div>
     )
 }

@@ -37,9 +37,9 @@ const productSlice = createSlice({
             // console.log("edit user ==>" , action)
             const edit = state.products.find((edit) => edit.id === action.payload);
             if (edit) {
-              const newName = prompt("Edit Name:", edit.name);
-              if (newName) {
-                edit.name = newName;
+              const newApi = prompt("Edit Api:", edit.title);
+              if (newApi) {
+                edit.title = newApi;
             }
           }
         }, 
@@ -52,24 +52,24 @@ const productSlice = createSlice({
     },
  
        extraReducers:(builder) => {
-        //    builder.addCase(fetchApiUsers.fulfilled, (state , action) => {
-        //         console.log(" reducer ==> " , action)
+           builder.addCase(fetchApiUsers.fulfilled, (state , action) => {
+                console.log(" reducer ==> " , action)
 
-        //     state.isloading=false;
-        //     state.products=action.payload
-        // })
+            state.isloading=false;
+            state.products=action.payload
+        })
 
-        builder.addCase(fetchApiUsers.pending, (state) => {
-            state.isloading = true;
-          })
-          .addCase(fetchApiUsers.fulfilled, (state, action) => {
-            state.isloading = false;
-            state.products = action.payload;
-          })
-          .addCase(fetchApiUsers.rejected, (state, action) => {
-            state.isloading = false;
-            state.error = action.error.message;
-          });
+        // builder.addCase(fetchApiUsers.pending, (state) => {
+        //     state.isloading = true;
+        //   })
+        //   .addCase(fetchApiUsers.fulfilled, (state, action) => {
+        //     state.isloading = false;
+        //     state.products = action.payload;
+        //   })
+        //   .addCase(fetchApiUsers.rejected, (state, action) => {
+        //     state.isloading = false;
+        //     state.error = action.error.message;
+        //   });
     }
 });
 

@@ -14,11 +14,14 @@ const DisplayUser = () => {
         <div>
            {/* <input className="inpd"  type="text"/> */}
             <div className="inpd">
-                <h3>Display user</h3>
+                <h3>Show Api Data</h3>
+                 {/* state.map((item, index) => (
+                         <div className="gap" key={index}>{item.name} */}
                 {
-                    state.map((item, index) => (
-                        <div className="gap" key={index}>{item.name}
-                            <span>
+                        state.map((item , index) => ( 
+                           <div className="gap" key={item.id || index}>
+                           {item.name ? item.name : item.title} 
+                            <span className="btn-row">
                                 <button className="rbtn" onClick={() => dispatch(removeProduct(item.id))}>remove</button>
                                 <button className="ebtn"  onClick={() => dispatch(editProduct(item.id))} >edit</button>
                                 {/* <button className="ebtn"  onClick={() => dispatch(deleteUser(item.key))} >DeleteAll</button> */}

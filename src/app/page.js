@@ -58,7 +58,7 @@ export default function Page() {
      <AddUser/>
      <DisplayUser/>
      <ApiUser/>
-     {/* <SplitApi/> */}
+     <SplitApi/>
 
     </div>
   );
