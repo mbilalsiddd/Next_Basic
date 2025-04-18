@@ -11,6 +11,7 @@ import AddUser from "./adduser/page";
 import DisplayUser from "./displayuser/page";
 import ApiUser from "./apiuser/page";
 import SplitApi from "./splitapi/page";
+import Component from "./components/login-btn";
 
 
 
@@ -20,7 +21,7 @@ export default function Page() {
   // const router = useRouter()
   // const navigate = (name) => {
   //   router.push(name)
-  // }
+  // } 
 
   // const count = useSelector((state) => state.counter.value);
   // const dispatch = useDispatch();
@@ -55,10 +56,11 @@ export default function Page() {
       <button onClick={() => dispatch(decrement())}>Decrement</button> */}
     
 
-     <AddUser/>
+     {/* <AddUser/>
      <DisplayUser/>
      <ApiUser/>
-     <SplitApi/>
+     <SplitApi/> */}
+     <Component/>
 
     </div>
   );
